@@ -19,11 +19,11 @@ const getWeatherData = (weatherLocation, callback) => {
 }
 
 // poll eventbrite for events in our location
-const getEventsData = (country, city, start, end, eventBriteOAuthtoken, callback) => {
+const getEventsData = (country, city, start, end, eventBriteOAueventBriteOAuthTokenthtoken, callback) => {
 
   // we'll limit this to within 50km of our chosen city  
   let url = `https://www.eventbriteapi.com/v3/events/search/?location.address=${city + ',' 
-  + country}&location.within=50km&start_date.range_start=${start.format('YYYY-MM-DDThh:mm:ss') + 'Z'}&start_date.range_end=${end.format('YYYY-MM-DDThh:mm:ss') + 'Z'}&token=${eventBriteOAuthtoken}`;
+  + country}&location.within=50km&start_date.range_start=${start.format('YYYY-MM-DDThh:mm:ss') + 'Z'}&start_date.range_end=${end.format('YYYY-MM-DDThh:mm:ss') + 'Z'}&token=${eventBriteOAuthToken}`;
 
   request(url, function (err, response, eventsJSON) {
     if (err) callback(err);
@@ -123,7 +123,7 @@ module.exports = (context, cb) => {
     // eventBriteOAuthtoken is a permanent, non-expiring Oauth token which you can generate from your eventbrite account
     // this never expires, and bypasses the need to authenticate. don't share it though - anyone can access your account with it! 
     // city and country should obviously be your location, for example 'Dublin', 'Ireland'
-    getEventsData(context.secrets.country, context.secrets.city, dates[0], dates[6], context.secrets.eventBriteOAuthtoken, (err, eventsData) => {
+    getEventsData(context.secrets.country, context.secrets.city, dates[0], dates[6], context.secrets.eventBriteOAuthToken, (err, eventsData) => {
 
       if (err) return cb(err);
 
