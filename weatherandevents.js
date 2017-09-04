@@ -63,7 +63,7 @@ const buildHtml = (context, dates, weatherData, eventsData, cb) => {
         for(let weather of daysWeather)
         {
           let forecast = moment(weather.$.from).format("HH:00") + " to " + moment(weather.$.to).format("HH:00") + ": " + weather.symbol[0].$.name;
-          let png = `https://github.com/roryok/weatherandevents/blob/master/images/30/${weather.symbol[0].$.var}.png`;
+          let png = `http://roryok.com/weathericons/30/${weather.symbol[0].$.var}.png`;
           dayHtml += `<div>${forecast} <img src='${png}' style='display:inline;' /></div>`;
         }
 
