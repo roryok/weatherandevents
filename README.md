@@ -19,10 +19,6 @@ A webtask.io script to send a daily email listing the local weather and events f
 
 With the above command, you'll get an email every 24 hours with a weather and events for your chosen location for the next 7 days. Here's a preview:
 
-<<<<<<< HEAD
-   ![example of the kind of email generated](preview.png)
-=======
 <p align="center">
   <img src="./preview.png" width="768"/>
 </p>
->>>>>>> 6b4ef480560a3e7dc95031e7d904a8acff694ea7
