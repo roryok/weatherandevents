@@ -19,7 +19,7 @@ const getWeatherData = (weatherLocation, callback) => {
 }
 
 // poll eventbrite for events in our location
-const getEventsData = (country, city, start, end, eventBriteOAueventBriteOAuthTokenthtoken, callback) => {
+const getEventsData = (country, city, start, end, eventBriteOAuthToken, callback) => {
 
   // we'll limit this to within 50km of our chosen city  
   let url = `https://www.eventbriteapi.com/v3/events/search/?location.address=${city + ',' 
