@@ -17,3 +17,6 @@ A webtask.io script to send a daily email listing the local weather and events f
 
   `wt cron schedule -n myCronSchedule 24h .\weatherandevents.js -s eventBriteOAuthtoken="MyEventBriteOAuthToken" -s city="Dublin" -s country="Ireland" -s weatherLocation="Ireland/Leinster/Dublin" -s IFTTTUrl="MyIFTTTWebHookUrl"`
 
+With the above command, you'll get an email every 24 hours with a weather and events for your chosen location for the next 7 days. Here's a preview:
+
+   
